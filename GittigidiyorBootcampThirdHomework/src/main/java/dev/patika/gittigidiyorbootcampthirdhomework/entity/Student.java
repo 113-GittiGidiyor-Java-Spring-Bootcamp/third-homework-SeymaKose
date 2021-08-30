@@ -17,8 +17,14 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String fullName;
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
     private String address;
     private Gender gender;
+
+   public Student(String fullName, LocalDate birthDate, String address, Gender gender) {
+        this.fullName = fullName;
+        this.birthDate = birthDate;
+        this.address = address;
+        this.gender = gender;
+    }
 }
