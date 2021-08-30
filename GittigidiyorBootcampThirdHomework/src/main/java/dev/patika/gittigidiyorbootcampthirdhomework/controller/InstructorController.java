@@ -49,14 +49,14 @@ public class InstructorController {
         instructorService.deleteByObject(instructor);
     }
 
-    @GetMapping("/findByFullName/{fullName}")
-    public List<Instructor> getStudentWithFullName(@PathVariable String fullName){
+    @GetMapping("/findInstructorByFullName/{fullName}")
+    public List<Instructor> getInstructorWithFullName(@PathVariable String fullName){
         return instructorService.getInstructorWithFullName(fullName);
     }
 
-    @DeleteMapping("/deleteByFullName/{fullName}")
-    public String deleteByFullName(@PathVariable String fullName){
-        instructorService.deleteByFullName(fullName);
+    @DeleteMapping("/deleteInstructorByFullName/{fullName}")
+    public String deleteInstructorByFullName(@PathVariable String fullName){
+        instructorService.deleteInstructorByFullName(fullName);
         return "Deleted!";
     }
 

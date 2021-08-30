@@ -54,12 +54,12 @@ public class StudentController {
         return studentService.getGendersWithGrouping();
     }
 
-    @GetMapping("/findByFullName/{fullName}")
+    @GetMapping("/findStudentByFullName/{fullName}")
     public List<Student> getStudentWithFullName(@PathVariable String fullName){
         return studentService.getStudentWithFullName(fullName);
     }
 
-    @DeleteMapping("/deleteByFullName/{fullName}")
+    @DeleteMapping("/deleteStudentByFullName/{fullName}")
     public String deleteByFullName(@PathVariable String fullName){
         studentService.deleteByFullName(fullName);
         return "Deleted!";
