@@ -11,7 +11,7 @@ import java.util.List;
 public interface StudentRepository extends CrudRepository<Student, Integer> {
 
     @Query("select s.gender, count(s.gender) from Student s group by s.gender") //JPQL Format
-    List<?> getGendersWithGrouping(); //StudentGenderStatistics
+    List<?> getGendersWithGrouping();
 
     @Query(nativeQuery = true, value = "select gender as gender, count(gender) as count from student group by gender") //Standart SQL Format
     List<?> getGendersWithGroupingWithNativeQuery();
